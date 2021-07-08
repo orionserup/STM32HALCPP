@@ -1,3 +1,19 @@
+/**
+ * @file Clocks.hpp
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-07-07
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
+#pragma once
+
+#include "Status.hpp"
+
+#include <chrono>
 
 namespace STM32 {
 
@@ -5,14 +21,17 @@ namespace STM32 {
 
     public:
 
+    Clock(const double& frequency);
+    Clock(const std::chrono::duration<double, std::micro>& period);
+    virtual ~Clock();
 
+    virtual Status SetFrequency(const double frequency);
+    virtual Status SetPeriod(const double frequency);
 
     private:
 
-        uint32_t frequency;
-
-
-
+        double frequency;                                   // in MHz
+        std::chrono::duration<double, std::micro> period;   // in us
 
     };
 
@@ -40,6 +59,15 @@ namespace STM32 {
 
     };
 
-    
+    class LSE: public Clock {
+
+
+    };
+
+    class HSE: public Clock {
+
+
+    };
+
 
 }

@@ -11,7 +11,7 @@ namespace STM32 {
     /**
      * @brief  
      * @note   
-     */
+     *
     class GPIO: public Peripheral {
 
     public:
@@ -98,7 +98,7 @@ namespace STM32 {
          * @param  pinmask: 
          * @retval 
          */
-        Status SetPins(const uint16_t pinmask);
+        Status SetPins(const uint16_t pinmask); 
 
         /**
          * @brief  

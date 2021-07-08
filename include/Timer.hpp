@@ -1,3 +1,16 @@
+/**
+ * @file Timer.hpp
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-07-07
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
+#pragma once
+
 #include "Peripheral.hpp"
 
 namespace STM32 {
@@ -15,16 +28,20 @@ namespace STM32 {
         Status Stop_IRQ() override;
         Status Stop_DMA() override;
 
-        class Channel {
+        // ----------------------------------- Basic Timer Registers ------------------------------ //
 
-        public: 
-
-
-
-
-        };
-
-        Channel channels[8];
+        R32 CR1;
+        R32 CR2;
+        R32 RESERVED0;
+        R32 DIER;
+        R32 SR;
+        R32 EGR;
+        R32 RESERVED1;
+        R32 RESERVED2;
+        R32 RESERVED3;
+        R32 CNT;
+        R32 PSC;
+        R32 ARR;
 
     protected:
 
@@ -35,7 +52,7 @@ namespace STM32 {
 
     };
 
-    struct AdvancedTimer: public Timer {
+    struct GeneralTimer: public Peripheral{
 
     public:
 

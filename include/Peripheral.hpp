@@ -1,3 +1,16 @@
+/**
+ * @file Peripheral.hpp
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-07-07
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
+#pragma once
+
 #include "Types.hpp"
 #include "Status.hpp"
 #include <functional>
@@ -7,21 +20,17 @@ namespace STM32 {
     struct Peripheral {
 
     public:
-
-        virtual Status Enable();
-        virtual Status Disable();
-        virtual Status Start();
-        virtual Status Start_IRQ(const std::function<void()>& routine);
-        virtual Status Start_DMA();
-        virtual Status Stop();
-        virtual Status Stop_IRQ();
-        virtual Status Stop_DMA();
-
-    private:
-
+    
         Peripheral();
         virtual ~Peripheral();
 
+        virtual Status Enable();
+        virtual Status Disable();
+    
+    protected:
+
+        virtual Status Stop();
+        virtual Status Start();
 
     };
 
