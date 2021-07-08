@@ -1,5 +1,9 @@
-#include <ctypes>
+#pragma once
 
-typedef volatile uint32_t R32;
-typedef volatile uint16_t R16;
-typedef volatile uint8_t R8;
+namespace STM32 {
+
+    typedef volatile uint32_t R32;
+    typedef volatile uint16_t R16;
+    typedef volatile uint8_t R8;
+
+}

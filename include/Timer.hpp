@@ -6,8 +6,6 @@ namespace STM32 {
 
     public:
 
-        Timer();
-
         Status Enable() override;
         Status Disable() override;
         Status Start() override;
@@ -17,11 +15,23 @@ namespace STM32 {
         Status Stop_IRQ() override;
         Status Stop_DMA() override;
 
-    private:
+        class Channel {
+
+        public: 
+
+
+
+
+        };
+
+        Channel channels[8];
+
+    protected:
 
         void ClearIRQ();
-        void ResetARR();
+        void ResetCNT();
 
+        BasicTimer();
 
     };
 

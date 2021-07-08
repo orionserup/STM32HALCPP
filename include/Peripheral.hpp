@@ -8,8 +8,6 @@ namespace STM32 {
 
     public:
 
-        Peripheral();
-    
         virtual Status Enable();
         virtual Status Disable();
         virtual Status Start();
@@ -21,6 +19,8 @@ namespace STM32 {
 
     private:
 
+        Peripheral();
+        virtual ~Peripheral();
 
 
     };

@@ -1,12 +1,12 @@
 
 namespace STM32 {
 
-enum Status {
+    enum Status {
 
-    HAL_OK,
+        HAL_OK,
 
 
-};
+    };
 
 
 }
